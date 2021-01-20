@@ -1,0 +1,252 @@
+/***********************Tag Selectors*************/
+body {
+  /* Sets all margins to zero pixels */
+  margin: 0;
+  text-align: center;
+  /*
+  Lecture 50:
+
+   Font-Family property specifies the font for an element. This property can
+      hold several font names as a "fallback system". If the browser does not
+      support the first font, it tries the next font.
+
+      - Two types of font family names:
+            - family-name: The name of a font-family, like "times", "courier", "arial", etc.
+            - generic-family: Name of a generic family, like "serif", "sans-serif", "cursive", "fantasy", "monospace".
+
+      - START WITH THE FONT YOU WANT, AND ALWAYS END WITH A GENERIC FAMILY, TO
+        LET THE BROWSER PICK A SIMILAR FONT IN THE GENERIC FAMILY, IF NO OTHER
+        FONTS ARE AVAILABLE.
+
+
+    If you want to ensure every viewer will see the same font, you need to use
+    font embedding
+
+        - Go to fonts.google.com to browse font families
+
+           */
+  font-family: 'Merriweather', serif;
+  font-size: 1em;
+  color: #40514E;
+}
+
+h1 {
+  /* FONT SIZE:
+        Static
+          -Units such as 'pixels' will give us a static font size. So if a person
+           changes the default zoom to something more or less, the font will not
+           change with the zoom.
+        Dynamic
+          - Units such as 'percentage' or 'em' wil give us a dynamic font size. So if a
+            person changes the default zoom to something more or less, the font
+            will change with the zoom. To figure out the pixel equivalent of 1px
+            to em's you can search online. 16px equals 100% or 1 em.
+
+            Inheritence
+              -'Percentages' and 'em' font sizes are inhereted. Meaning if your body
+                font-size is specified to 2em or 200% and the 'h1' size is 5.625em
+                or 562.5%, the font-size of the 'parent' which is the body's font
+                size and the h1 size will be added together, giving us a gigantic
+                font size.
+
+            Avoiding Inhereitence
+            - 'rem' which refers to the root 'em'. This ignores all the parent
+              settings for the font size and set it to the specified value Relative
+              to the root. Example: 5rem.
+            -When sizing text you should use 'rem' because it is the most adaptable.
+    */
+  font-size: 5rem;
+  /* 16px = 1 em = 100%*/
+  font-family: 'Sacramento', cursive;
+  margin: 50px auto 0 auto;
+  color: #66BFBF;
+  line-height: 2;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #66BFBF;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #11999E;
+}
+
+a {
+  color: #11999E;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+/* A pseudo-class is used to define a special state of an element. */
+a:hover{
+  color: #EAF6F6;
+}
+
+p{
+    line-height: 2;
+}
+
+
+/*****************Class Selectors*************/
+/* Padding:
+    - When you have padding, it only pads the content, but not the things
+      like backround image or color.
+
+    - Useful link for CSS Box Model Demo:
+      http://markusvogl.com/web1/interactive_box_model/css_box_demo.html
+*/
+.top-container {
+  background-color: #d0e8f2;
+  /* The top-container must be positioned as relative that way the
+      top and bottom cloud can be positioned relative to the relative parent
+      top-container.*/
+  position: relative;
+  padding-top: 100px;
+}
+
+.middle-container {
+    margin: 100px 0;
+}
+
+.bottom-container {
+    background-color: #66bfbf;
+    padding: 50px 0 20px;
+}
+
+.pro {
+  text-decoration: underline;
+}
+
+.top-cloud {
+  position: absolute;
+  right: 300px;
+  top: 40px;
+}
+
+.bottom-cloud {
+  /* Element is positioned relative to the nearest positioned ancestor
+      (instead of positioned relative to the viewport, like fixed.)*/
+  position: absolute;
+  left: 250px;
+  bottom: 300px;
+}
+
+.profile-pic {
+  width: 400px;
+}
+
+.monitor-pic{
+  width: 25%;
+  /* Lecture 58:
+        Float
+            - The CSS propery float places an element on the left or right side
+              of its container, allowing text and inline elements to wrap around
+              it. Element is removed from the normal flow of the page, but not
+              completely removed like absolute positioning.
+ */
+  float: left;
+  margin-right: 30px;
+}
+
+.puzzle-pieces{
+  width: 25%;
+  float: right;
+  margin-left: 30px;
+
+}
+.skill-row {
+  width: 50%;
+  /* You can set the margin property to auto to horizontally center the element
+     within its container. The element will then take up the specified width,
+     and the remaining space will be split equally between the left and right
+     margins. */
+  margin: 100px auto 200px;
+  text-align: left;
+}
+
+/* .software-skill-description{
+     clear
+        - Clear is kind of like the opposite of float.
+        - The clear CSS property sets whether an element must be moved below
+          (cleared) floating elements. This applies to floating and non-floating elements.
+        - This prevents anything from wrapping anything on the left side by clearing.
+
+    clear: left;
+}
+
+.general-skill-description{
+  clear: right;
+}
+*/
+.hr-dot{
+  border-color: gray;
+  border-style: dotted;
+  border-width: 5px 0 0 0;
+  width: 4%;
+  margin: 100px auto;
+
+}
+
+.copyright{
+  color: #EAF6F6;
+  font-size: 0.75rem;
+  padding: 20px 0px;
+}
+
+.BUTTON_XMJ {
+   background: #66BFBF;
+   background-image: -webkit-linear-gradient(top, #66BFBF, #1E62D0);
+   background-image: -moz-linear-gradient(top, #66BFBF, #1E62D0);
+   background-image: -ms-linear-gradient(top, #66BFBF, #1E62D0);
+   background-image: -o-linear-gradient(top, #66BFBF, #1E62D0);
+   background-image: -webkit-gradient(to bottom, #66BFBF, #1E62D0);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #FFFFFF;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 1rem;
+   font-weight: 300;
+   padding: 20px;
+   border: solid #337FED 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+   margin-bottom: 50px;
+   margin-top: 50px;
+}
+
+.BUTTON_XMJ:hover {
+   border: solid #337FED 1px;
+   background: #1E62D0;
+   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
+}
+
+.footer-link{
+  margin: 10px 20px;
+
+}
+
+.intro{
+  margin: auto;
+  width: 30%;
+}
+
+.contact-message{
+  margin: 40px auto 60px;
+  width: 40%;
+}

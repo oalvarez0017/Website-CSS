@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>OSCAR ALVAREZ</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <!--Div is a content division element. It is a special Html element that
+        allows us to divide our content on our website so that we can structure
+        each div seperately. Has a height of zero by default (WidthxHeight). In
+        order for the Div to function we must use CSS.-->
+
+
+
+    <!-- Block Elements:
+          - Elements that take up the whole width on the page of the screen.
+          - Common elements include: Paragraphs, Headers, Divs, lists, list
+            items and forms. -->
+
+    <!-- The <span> tag is an inline container used to mark up a apart of a
+         text, or a part of a document. Ususally used with CSS. Unlike block
+         elements, an inline element only takes up as much space as it needs to in
+         the height and its width.
+
+        Common inline elements:
+          - Spans, images, and anchors (links usually show up next to each other).
+
+    -->
+
+    <!-- Display:
+            - We can change BLOCK elements to inline elements using the Display
+              tag. Since paragraphs are naturally block elements using the
+              display element, we can make it inline placing all the elements
+              on the same line.
+            - One downside to inline elements, is that you are not able to change
+              the width. HOW DO WE GET PAST THIS? Using the inline-block property
+              with the display property. INLINE-BLOCK DEFINITION: Displays an
+              element as an inline-level block container. The element itself is
+              formatted as an inline element, but you can apply height and width
+              values.
+
+            -There are FOUR values that we will cover using the display tag:
+             Block, Inline, inline-block, and None. None simply gets rid of our
+             element.
+
+        NONE VS VISIBILITY:
+            -"None", completely makes it seem like that portion of the code was
+              never there. Almost like they were deleted.
+            -"Visibility", uses a property called "hidden" which makes the
+              element not visible, but the space that it has occupied on the
+              webpage is still there as if it were invisible.
+    -->
+
+<!-- Lecture 47:
+          Position property
+            -Static
+              -All html elements are static in their position by default. Meaning
+              go along with the html rules and going along with the html flow.
+
+            -Relative
+              -Allows us to position the element that we select relative to how
+              it would've been positioned had it been static.
+              - EX: img{
+                        position: Relative
+                        left (This is one of the four coordinate properties that
+                        relative uses. The others are top, bottom, and right.
+                        Think of this as adding a 30 px margin to the left,
+                        giving the impression that the image is being moved to
+                        the right.): 30px;
+                            }
+
+              - Doesn't affect the position of any other elements on the page.
+
+            -Absolute
+            -Fixed
+
+          HTML: <body>
+
+                <div class = "red">
+
+                </div>
+
+                <div class = "blue">
+
+                </div>
+
+                <div class = "yellow">
+
+                </div>
+
+
+              </body>
+
+        CSS:
+        .red{
+          height: 100px;
+          width: 100px;
+          background-color: red;
+          display: inline-block;
+          position: relative;
+          left: 200px;
+
+
+
+        }
+
+        .blue{
+          height: 100px;
+          width: 100px;
+          background-color: blue;
+          display: inline-block;
+          position: relative;
+          right: 100px
+
+
+        }
+
+        .yellow{
+          height: 100px;
+          width: 100px;
+          background-color: yellow;
+          display: inline-block;
+          position: relative;
+          right: 100px;
+
+
+        }
+
+
+-->
+
+<!-- Lecture 48:
+        Absolute Postioning
+          -Positions the element relative to its parent. So unlike the
+            relative position which moves our element the opposite direction,
+            absolute move it in the direction you specify inside the parent.
+            Essentially, you're adding a margin to its parent element vs
+            the relative positioning which adds a margin relative to where the
+            element should've been.
+            Example: if you have the position: absolute, then right: 100px;
+                      the element would move 100 px to the right.
+
+          - When using absolute positioning, you're taking th element out of the
+            flow of the document.
+
+          - Below you will see a on overall parent div and other nested divs in
+            an example code below. This will show you how this works more and
+            how you can take advantage of creating your own parent rather than
+            use the overall body to control your overall positioning.
+
+        Fixed Positioning:
+
+          Using fixed positioning allows our element to be position relative to
+          the view port, meaning it will stay in the smae place even if the page is scrolled.
+
+        HTML:
+        <body>
+    <div class = "container">
+                <div class = "red">
+
+                </div>
+
+                <div class = "blue">
+
+                </div>
+
+                <div class = "yellow">
+
+                </div>
+     </div>
+  <h1> Hello World </h1>
+  <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+  <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+  <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+    <h1> Hello World </h1>
+              </body>
+
+CSS:
+body{
+  margin: 0px;
+}
+
+.container{
+  width: 300px;
+  height: 300px;
+  background-color: grey;
+}
+
+.red{
+          height: 100px;
+          width: 100px;
+          background-color: red;
+          position: absolute;
+          top: 200px;
+          left: 200px;
+
+
+        }
+
+
+.blue{
+          height: 100px;
+          width: 100px;
+          background-color: blue;
+          position: absolute;
+          top: 100px;
+          left: 100px;
+
+
+
+
+
+
+
+        }
+
+
+.yellow{
+          height: 100px;
+          width: 100px;
+          background-color: yellow;
+          position: fixed;
+
+
+
+        }
+
+-->
+
+
+    <div class="top-container">
+      <img class = "top-cloud"src="images/cloud.png" alt="cloud-img">
+      <h1>I'm Oscar</h1>
+      <h2 class = "electrical-engineer">a <span class = "pro">electrical</span> engineer</h2>
+      <img class = "bottom-cloud" src="images/cloud.png" alt="cloud-img">
+      <img src="images/mountain.png" alt="mountain-image">
+    </div>
+
+<!--Lecture 52 -->
+    <div class="middle-container">
+        <div class="profile">
+          <img class = "profile-pic"src="images/Oscars Profile Picture Circle.png" alt="OScar Profile Pic">
+          <h2>Welcome To My Website</h2>
+          <p class = "intro">Hello my name is Oscar Alvarez. I am an Alumni from the University Washington Tacoma. Currently, I am working as an electrical engineer at BCE Engineers.</p>
+        </div>
+        <hr class = "hr-dot">
+        <div class="skills">
+            <h2>My Skills</h2>
+            <div class="skill-row">
+              <img class="monitor-pic" src="images/software.png" alt="monitor-pic">
+              <h3>SOFTWARE</h3>
+              <p class = "software-skill-description">AutoCAD, Revit, ElumTools, Word, Excel, HTML, CSS </p>
+            </div>
+            <div class="skill-row">
+              <img class="puzzle-pieces" src="images/puzzle-pieces.png" alt="puzzle-pieces">
+              <h3>GENERAL</h3>
+              <p class = "general-skill-description">Problem Solving, Teamwork, Communications, Flexible, Dependable. </p>
+            </div>
+        </div>
+        <hr class = "hr-dot">
+        <div class="contact-me">
+          <h2>Get In Touch</h2>
+          <h3>Connect with me on any of my social medias!</h3>
+          <p class = "contact-message">If you dont use social media or prefer email, select the link below.</p>
+          <a href="mailto:oscaralvarez0017@gmail.com" class="BUTTON_XMJ">CONTACT ME</a>
+
+        </div>
+    </div>
+
+
+    <div class="bottom-container">
+      <a class="footer-link" href="https://www.linkedin.com/in/oscar-alvarez-7b0777172/">LinkedIn</a>
+      <a class="footer-link" href="https://www.facebook.com/oscar.alvarez.397/">Facebook</a>
+      <p class = "copyright">© 2020 Oscar A.</p>
+    </div>
+
+
+
+
+
+
+  </body>
+</html>
